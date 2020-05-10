@@ -85,6 +85,21 @@ public class CustomConfig {
      */
     private int titleTextSize = 18;
 
+    /**
+     * 第一次默认的显示省份，一般配合定位，使用
+     */
+    private String defaultProvinceName = "";
+
+    /**
+     * 第一次默认得显示城市，一般配合定位，使用
+     */
+    private String defaultCityName = "";
+
+    /**
+     * 第一次默认得显示，一般配合定位，使用
+     */
+    private String defaultDistrict = "";
+
 
 //    /**
 //     * 自定义的item布局
@@ -176,6 +191,30 @@ public class CustomConfig {
 
     public void setVisibleItems(int visibleItems) {
         this.visibleItems = visibleItems;
+    }
+
+    public String getDefaultProvinceName() {
+        return defaultProvinceName;
+    }
+
+    public void setDefaultProvinceName(String defaultProvinceName) {
+        this.defaultProvinceName = defaultProvinceName;
+    }
+
+    public String getDefaultCityName() {
+        return defaultCityName;
+    }
+
+    public void setDefaultCityName(String defaultCityName) {
+        this.defaultCityName = defaultCityName;
+    }
+
+    public String getDefaultDistrict() {
+        return defaultDistrict;
+    }
+
+    public void setDefaultDistrict(String defaultDistrict) {
+        this.defaultDistrict = defaultDistrict;
     }
 
     public boolean isProvinceCyclic() {
@@ -349,6 +388,13 @@ public class CustomConfig {
         this.isCityCyclic = builder.isCityCyclic;
 
         /**
+         * 默认的省市区地址
+         */
+        this.defaultDistrict = builder.defaultDistrict;
+        this.defaultCityName = builder.defaultCityName;
+        this.defaultProvinceName = builder.defaultProvinceName;
+
+        /**
          * 是否显示城市和地区
          */
         this.mWheelType = builder.mWheelType;
@@ -381,6 +427,21 @@ public class CustomConfig {
          * 滚轮显示的item个数
          */
         private int visibleItems = 5;
+
+        /**
+         * 第一次默认的显示省份，一般配合定位，使用
+         */
+        private String defaultProvinceName = "";
+
+        /**
+         * 第一次默认得显示城市，一般配合定位，使用
+         */
+        private String defaultCityName = "";
+
+        /**
+         * 第一次默认得显示，一般配合定位，使用
+         */
+        private String defaultDistrict = "";
 
         /**
          * 省滚轮是否循环滚动
@@ -655,6 +716,39 @@ public class CustomConfig {
          */
         public Builder visibleItemsCount(int visibleItems) {
             this.visibleItems = visibleItems;
+            return this;
+        }
+
+        /**
+         * 第一次默认的显示省份，一般配合定位，使用
+         *
+         * @param defaultProvinceName
+         * @return
+         */
+        public Builder province(String defaultProvinceName) {
+            this.defaultProvinceName = defaultProvinceName;
+            return this;
+        }
+
+        /**
+         * 第一次默认得显示城市，一般配合定位，使用
+         *
+         * @param defaultCityName
+         * @return
+         */
+        public Builder city(String defaultCityName) {
+            this.defaultCityName = defaultCityName;
+            return this;
+        }
+
+        /**
+         * 第一次默认地区显示，一般配合定位，使用
+         *
+         * @param defaultDistrict
+         * @return
+         */
+        public Builder district(String defaultDistrict) {
+            this.defaultDistrict = defaultDistrict;
             return this;
         }
 
